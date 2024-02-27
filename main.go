@@ -4,7 +4,13 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/kipngeno-isaac/go-expense-tracker-api/config"
 )
+
+func init() {
+	config.ConnectToDB()
+	config.Migrate()
+}
 
 func main() {
 	r := gin.Default()
